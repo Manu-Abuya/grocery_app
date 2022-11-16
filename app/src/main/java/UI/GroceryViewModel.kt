@@ -1,4 +1,4 @@
-package UI
+package com.example.grocerylist.UI
 
 import androidx.lifecycle.ViewModel
 import com.example.groceryapp.Database.Entity.GroceryItems
