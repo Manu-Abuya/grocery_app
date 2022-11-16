@@ -1,4 +1,4 @@
-package com.example.groceryapp
+package com.example.grocerylist.Database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
