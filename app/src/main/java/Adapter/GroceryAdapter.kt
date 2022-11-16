@@ -3,13 +3,15 @@ package com.example.grocerylist.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.RecyclerView
 import com.example.groceryapp.Database.Entity.GroceryItems
 import com.example.groceryapp.R
 import com.example.grocerylist.UI.GroceryViewModel
 import kotlinx.android.synthetic.main.groceryadapter.view.*
 
-class GroceryAdapter(var list: List<GroceryItems>, valViewModel: GroceryViewModel) :RecyclerView.Adapter<GroceryAdapter.GroceryViewHolder>() {
+class GroceryAdapter(var list: List<GroceryItems>, val ViewModel: GroceryViewModel) :
+    RecyclerView.Adapter<GroceryAdapter.GroceryViewHolder>() {
 
     // In this function we will add the groceryadapter.xml to kotlin class
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroceryViewHolder {
@@ -29,7 +31,7 @@ class GroceryAdapter(var list: List<GroceryItems>, valViewModel: GroceryViewMode
         holder.itemView.txtItemPrice.text = "${currentPosition.itemPrice}"
         holder.itemView.txtItemQuantity.text = "${currentPosition.itemQuantity}"
         holder.itemView.ibDelete.setOnClickListener {
-            val delete: Any = viewModel.delete(currentPosition)
+            viewModel.delete(currentPosition)
         }
 
         // To get total cost
