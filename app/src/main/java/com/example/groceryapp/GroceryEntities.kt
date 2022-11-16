@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+// Data is stored in this data class
+// Entities class create a table in database, in our database we will create three columns
+
 @Entity(tableName = "grocery_items")
 
 data class GroceryItems (
